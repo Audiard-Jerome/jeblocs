@@ -4,9 +4,9 @@
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles(){
 	//css du theme
-	wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.min.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.min.css'));
+	wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/assets/css/theme.min.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/theme.min.css'));
 	//Script JS menu burger
-	wp_enqueue_script( 'script_burger', get_stylesheet_directory_uri() . '/js/burger.js', array(), filemtime(get_stylesheet_directory() . '/js/burger.js'), true );
+	wp_enqueue_script( 'script_burger', get_stylesheet_directory_uri() . '/assets/js/burger.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/burger.js'), true );
 }
 
 
