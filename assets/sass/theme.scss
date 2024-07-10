@@ -1,4 +1,237 @@
-//breakpoint
-$breakpoint__mobile: 769px;
+//debug
+// *{
+//     border: 1px solid red;
+// }
 
-//style
+
+//enleve l'espace au début des blocks
+:where(.wp-site-blocks) > * {
+    margin-block-start: 0px;
+    margin-block-end: 0;
+}
+
+//style formulaire
+.wpcf7-form {
+
+    input:not(input[type=checkbox]),
+    textarea {
+        border-radius: 5px;
+        border: 1px solid var(--wp--preset--color--custom-clair);
+        height: 3rem;
+        width: 100%;
+        padding: 1rem;
+        font-family: var(--wp--preset--font-family--ibm-plex-sans);
+        font-size: var(--wp--preset--font-size--medium);
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: auto;
+    }
+
+    .wpcf7-submit {
+        height: auto;
+        width: auto;
+        background-color: var(--wp--preset--color--custom-violet);
+        color: white;
+        border-radius: 10px;
+    }
+
+    .btn {
+        p {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            input {
+                margin: 0;
+                padding: 0 1em;
+                width: auto;
+            }
+        }
+    }
+
+    .wpcf7-spinner {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        margin: 0;
+    }
+
+    h2 {
+        margin: 0;
+        color: var(--wp--preset--color--custom-violet);
+    }
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg{
+    height: 3em;
+    width: 3em;
+}
+
+//carousel technologie
+
+.technoContainer {
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+.carousel {
+    width: 100%;
+    max-width: 1440px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  
+  @keyframes scrollLeft {
+    to {
+      transform: translateX(-200px);
+    }
+  }
+  
+
+// Déclaration des variables
+$nbrItem: 13;
+$scrollTime: 60s;
+
+.item {
+  width: 125px;
+  height: 75px;
+  margin: 25px;
+  background-color: var(--wp--preset--color--custom-violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  transform: translateX(calc(125px * #{$nbrItem}));
+  animation: scrollLeft linear infinite $scrollTime;
+  background-position: center;
+  background-size: auto 75%;
+  background-repeat: no-repeat;
+  box-shadow: var(--wp--preset--shadow--sharp);
+}
+
+@for $i from 1 through $nbrItem {
+  .item#{$i} {
+    animation-delay: calc(#{$scrollTime} / #{$nbrItem} * (#{$nbrItem} - #{$i}) * -1);
+  }
+}
+
+.html{
+    background-image: url(../images/html.svg);
+}
+
+.css{
+    background-image: url(../images/css.svg);
+}
+
+.php{
+    background-image: url(../images/php.svg);
+}
+
+.javascript{
+    background-image: url(../images/javascript.svg);
+}
+
+.sass{
+    background-image: url(../images/sass.svg);
+}
+
+.wordpress{
+    background-image: url(../images/wordPress.svg);
+}
+
+.github{
+    background-image: url(../images/github.svg);
+}
+
+.visual{
+    background-image: url(../images/visualstudio.svg);
+}
+
+.figma{
+    background-image: url(../images/figma.svg);
+}
+
+.windows{
+    background-image: url(../images/windows.svg);
+}
+
+.linux{
+    background-image: url(../images/linux.svg);
+}
+
+.docker{
+    background-image: url(../images/docker.svg);
+}
+
+.localwp{
+    background-image: url(../images/local.png);
+}
+
+
+//background
+
+.backgroudNoise{
+     background-image: url('../images/noise.svg'); 
+}
+
+.backgroundGrid{
+    background-image: url('../images/grid.svg');
+}
+
+.backgroundHeader{
+    background: rgb(129,33,208);
+    background: linear-gradient(90deg, rgba(129,33,208,1) 0%, rgba(41,28,82,1) 100%);
+}
+
+//carte
+
+.card {
+    background-color: var(--wp--preset--color--custom-violet-tr-s-clair);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-button {
+    background-color: var(--wp--preset--color--custom-violet);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .card-button:hover {
+    background-color:var(--wp--preset--color--custom-violet-fonc);
+    transform: scale(1.05);
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .gridRealisation{
+    justify-items: center;
+    padding: 25px;
+  }

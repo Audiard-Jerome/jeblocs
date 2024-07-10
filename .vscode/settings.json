@@ -7,7 +7,7 @@
         }
     ],
     "liveSassCompile.settings.includeItems": [
-        "/SASS/theme.scss",
+        "/assets/SASS/theme.scss",
     ],
     "liveSassCompile.settings.generateMap":false
 }
