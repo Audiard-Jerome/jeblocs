@@ -109,7 +109,7 @@
 		},
 		"color": {
 			"background": "var(--wp--preset--color--white)",
-			"gradient": "linear-gradient(135deg,rgb(129,33,208) 0%,rgb(41,28,58) 100%)",
+			"gradient": "linear-gradient(90deg,rgb(129,33,208) 0%,rgb(41,28,58) 100%)",
 			"text": "var(--wp--preset--color--white)"
 		},
 		"elements": {
@@ -178,7 +178,13 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "24px"
+			"blockGap": "0px",
+			"padding": {
+				"bottom": "0px",
+				"left": "0px",
+				"right": "0px",
+				"top": "0px"
+			}
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--ibm-plex-sans)",

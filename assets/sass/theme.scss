@@ -235,3 +235,10 @@ $scrollTime: 60s;
     justify-items: center;
     padding: 25px;
   }
+
+  //menu mobile
+
+  .wp-block-navigation__responsive-container-close svg,.wp-block-navigation__responsive-container-open svg {
+    width: 48px;
+    height: 48px;
+  }
