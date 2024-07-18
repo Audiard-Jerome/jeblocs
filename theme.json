@@ -41,7 +41,7 @@
 			]
 		},
 		"layout": {
-			"contentSize": "900px",
+			"contentSize": "1024px",
 			"wideSize": "1440px"
 		},
 		"spacing": {
@@ -104,6 +104,19 @@
 			"core/image": {
 				"border": {
 					"radius": "25px"
+				}
+			},
+			"core/navigation": {
+				"css": "",
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--40)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--ibm-plex-sans)",
+					"fontSize": "42px",
+					"fontStyle": "normal",
+					"fontWeight": "700",
+					"lineHeight": "1.5"
 				}
 			}
 		},
@@ -201,6 +214,6 @@
 			"name": "footer"
 		}
 	],
-	"version": 2,
-	"$schema": "https://schemas.wp.org/wp/6.5/theme.json"
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json"
 }
