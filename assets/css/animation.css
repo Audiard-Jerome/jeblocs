@@ -1,0 +1,16 @@
+/* effet fade in sur les sections avec la class container 
+Dans un autre fichier CSS pour ne pas avoir les animations dans l'editeur wordpress */
+
+.container{
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+.container.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+
+

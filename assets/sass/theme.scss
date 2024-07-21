@@ -194,7 +194,16 @@ $scrollTime: 60s;
     background: linear-gradient(90deg, rgba(129,33,208,1) 0%, rgba(41,28,82,1) 100%);
 }
 
-//carte
+//carte projet
+
+.card {
+  transition: all 0.3s ease;
+  box-shadow: var(--wp--preset--shadow--deep);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
 
 .card-button {
   background-color: var(--wp--preset--color--custom-violet);
@@ -214,10 +223,10 @@ $scrollTime: 60s;
   transform: scale(1.05);
 }
 
-.gridRealisation {
-  justify-items: center;
-  padding: 25px;
-}
+// .gridRealisation {
+//   justify-items: center;
+//   padding: 25px;
+// }
 
 //menu mobile
 
@@ -225,4 +234,9 @@ $scrollTime: 60s;
 .wp-block-navigation__responsive-container-open svg {
   width: 48px;
   height: 48px;
+}
+
+.wp-block-post-title{
+    text-align: center;
+    padding-top: 25px;;
 }
