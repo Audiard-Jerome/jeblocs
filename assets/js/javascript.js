@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = {
         root: null, 
         rootMargin: '0px',
-        threshold: 0.25 // 50% du container doit etre visible
+        threshold: 0.10 // 10% du container doit etre visible
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -22,5 +22,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-console.log("JS chargé");
+  

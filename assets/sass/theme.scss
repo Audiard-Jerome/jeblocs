@@ -223,11 +223,6 @@ $scrollTime: 60s;
   transform: scale(1.05);
 }
 
-// .gridRealisation {
-//   justify-items: center;
-//   padding: 25px;
-// }
-
 //menu mobile
 
 .wp-block-navigation__responsive-container-close svg,
@@ -239,4 +234,17 @@ $scrollTime: 60s;
 .wp-block-post-title{
     text-align: center;
     padding-top: 25px;;
+}
+
+//cacher les elements en version mobile.
+
+@media (max-width: 768px) {
+  .hideMobile {
+    display: none!important;
+  }
+
+  .contactContainer{
+    padding: 10px;
+  }
+
 }

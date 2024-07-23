@@ -13,4 +13,14 @@ Dans un autre fichier CSS pour ne pas avoir les animations dans l'editeur wordpr
   transition: all 0.5s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .hideMobile {
+    display: none!important;
+  }
+
+  .contactContainer{
+    padding: 10px;
+  }
+
+}
 
