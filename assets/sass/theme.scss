@@ -248,3 +248,8 @@ $scrollTime: 60s;
   }
 
 }
+
+//cacher google catchapa
+.grecaptcha-badge { 
+  visibility: hidden;
+}
