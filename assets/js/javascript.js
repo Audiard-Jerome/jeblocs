@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const containers = document.querySelectorAll('.container');
 
     const options = {
-        root: null, 
+        root: null,
         rootMargin: '0px',
         threshold: 0.10 // 10% du container doit etre visible
     };
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// doom
+// doom via cheatcode
 const targetSequence = 'iddad';
 let currentSequence = '';
 
@@ -40,10 +40,52 @@ function handleKeyPress(event) {
     if (currentSequence === targetSequence) {
         // Ouvrir le site web lorsque la séquence est détectée
         window.open('https://audiard-jerome.github.io/doom/', '_blank');
-        
+
         // Réinitialiser la séquence après détection
         currentSequence = '';
     }
 }
 
 document.addEventListener('keydown', handleKeyPress);
+
+//gestion de la modale
+document.addEventListener("DOMContentLoaded", function() {
+    const openModalButtons = document.querySelectorAll('.openModal');
+    const modal = document.querySelector('.modal');
+    const closeModalButton = modal.querySelector('.close');
+
+    openModalButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            modal.classList.remove('hide');
+            modal.classList.add('show');
+        });
+    });
+
+    closeModalButton.addEventListener('click', function() {
+        closeModal();
+    });
+
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Ajouter un écouteur d'événement pour la touche Échap
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') { // Vérifie si la touche appuyée est Échap
+            closeModal();
+        }
+    });
+
+    // Fonction pour fermer la modal
+    function closeModal() {
+        modal.classList.remove('show');
+        modal.classList.add('hide');
+        
+        // Optionally, use setTimeout to remove modal after animation finishes
+        setTimeout(function() {
+            modal.classList.remove('hide');
+        }, 300); // Match the duration of fadeOut animation
+    }
+});

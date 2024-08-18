@@ -1,0 +1,162 @@
+//modal
+
+
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 2;
+}
+
+.modalWrapper {
+    overflow: hidden;
+    background-color: var(--wp--preset--color--custom-violet);
+    height: auto;
+    width: 600px;
+    border: 5px solid #000;
+    border-radius: 1em;
+    padding: 1em;
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: 100vh;
+        animation: unset;
+        box-sizing: border-box;
+    }
+}
+
+.modal.show{
+    display: flex;
+    animation: fadeIn 0.3s both;
+    .modalWrapper{
+        animation: slideFromTop 0.5s both 0.1s;
+    }
+}
+
+.modal.hide{
+    display: flex;
+    animation: fadeOut 0.3s both;
+    .modalWrapper{
+        animation: slideToBottom 0.3s both;
+    }
+}
+
+.wpcf7-form {
+
+    input:not(input[type=checkbox]),
+    textarea {
+        border-radius: 5px;
+        border: 1px solid var(--wp--preset--color--custom-clair);
+        height: 3rem;
+        width: 100%;
+        padding: 1rem;
+        font-family: var(--wp--preset--font-family--ibm-plex-sans);
+        font-size: var(--wp--preset--font-size--medium);
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    .wpcf7-submit {
+        height: auto;
+        width: auto;
+        background-color: var(--wp--preset--color--custom-violet);
+        color: white;
+        border-radius: 10px;
+    }
+
+    .wpcf7-list-item{
+        margin: 0;
+    }
+
+    .btn {
+        p {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            input {
+                margin: 0;
+                padding: 0 1em;
+                width: auto;
+            }
+        }
+    }
+
+    .wpcf7-spinner {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        margin: 0;
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.close{
+        position:absolute;
+        height: 23px;
+        width: 23px;
+        top: 32px;
+        right: 32px;
+        cursor: pointer;
+        z-index: 3;
+        background-image: url(../images/iconCroix.svg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideFromTop {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    80% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideToBottom {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100px);
+    }
+}

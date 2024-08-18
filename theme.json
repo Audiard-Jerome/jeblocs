@@ -109,11 +109,11 @@
 			"core/navigation": {
 				"css": "",
 				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--40)"
+					"blockGap": "var(--wp--preset--spacing--60)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--ibm-plex-sans)",
-					"fontSize": "42px",
+					"fontSize": "28px",
 					"fontStyle": "normal",
 					"fontWeight": "700",
 					"lineHeight": "1.5"
