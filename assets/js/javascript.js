@@ -22,4 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-  
+// doom
+const targetSequence = 'iddad';
+let currentSequence = '';
+
+// Fonction pour vérifier la séquence de touches
+function handleKeyPress(event) {
+    // Ajouter la touche actuelle à la séquence
+    currentSequence += event.key;
+
+    // Garder la séquence à la longueur de la séquence cible
+    if (currentSequence.length > targetSequence.length) {
+        currentSequence = currentSequence.slice(-targetSequence.length);
+    }
+
+    // Vérifier si la séquence actuelle correspond à la séquence cible
+    if (currentSequence === targetSequence) {
+        // Ouvrir le site web lorsque la séquence est détectée
+        window.open('https://audiard-jerome.github.io/doom/', '_blank');
+        
+        // Réinitialiser la séquence après détection
+        currentSequence = '';
+    }
+}
+
+document.addEventListener('keydown', handleKeyPress);

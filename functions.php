@@ -27,6 +27,3 @@ function jeblocs_enqueue_styles(){
 	wp_enqueue_script( 'jeblocs-javascript', get_stylesheet_directory_uri() . '/assets/js/javascript.js', array(), filemtime(get_stylesheet_directory() . '/assets//js/javascript.js'), true );
     };
 
-
-
-
