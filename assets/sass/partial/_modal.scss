@@ -1,31 +1,48 @@
 //modal
 
+@media (max-width: 768px) {
+    .formContainer{
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+    }
+}
+
 .modal1 {
     display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background: rgba(0, 0, 0, 0.8); 
     z-index: 100000;
 }
 
 .modalWrapper {
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--wp--preset--color--custom-violet);
     height: auto;
     width: 600px;
     border: 5px solid #000;
     border-radius: 1em;
-    padding: 1em;
+    padding: 0 1em;
+    gap: 0;
     @media (max-width: 768px) {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         animation: unset;
         box-sizing: border-box;
+        padding: 0 1em;
+        p{
+            padding: 0;
+            margin: 5px;
+        }
         h2{
             padding-top: 32px;
         }
@@ -73,8 +90,8 @@
     .wpcf7-submit {
         height: auto;
         width: auto;
-        background-color: var(--wp--preset--color--custom-clair);
-        color: black;
+        background-color: var(--wp--preset--color--custom-violet);
+        color: white;
         border-radius: 10px;
     }
 
@@ -108,19 +125,20 @@
 
     h2 {
         margin: 0;
+        color: var(--wp--preset--color--custom-violet);;
     }
 }
 
-.close{
-        position:absolute;
-        height: 23px;
-        width: 23px;
-        top: 32px;
-        right: 32px;
-        cursor: pointer;
-        z-index: 3;
-        background-image: url(../images/iconCroix.svg);
-}
+// .close{
+//         position:absolute;
+//         height: 23px;
+//         width: 23px;
+//         top: 32px;
+//         right: 32px;
+//         cursor: pointer;
+//         z-index: 3;
+//         background-image: url(../images/iconCroix.svg);
+// }
 
 @keyframes fadeIn {
     from {

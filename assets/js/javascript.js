@@ -50,81 +50,81 @@ document.addEventListener('keydown', handleKeyPress);
 
 //gestion de la modale de contact (+ Doom)
 
-document.addEventListener("DOMContentLoaded", function() {
-    const openModalButtons = document.querySelectorAll('.openModal');
-    const modal = document.querySelector('.modal1');
-    const closeModalButton = modal.querySelector('.close');
+// document.addEventListener("DOMContentLoaded", function() {
+//     const openModalButtons = document.querySelectorAll('.openModal');
+//     const modal = document.querySelector('.modal1');
+//     const closeModalButton = modal.querySelector('.close');
 
-    openModalButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            modal.classList.remove('hide');
-            modal.classList.add('show');
-        });
-    });
+//     openModalButtons.forEach(function(button) {
+//         button.addEventListener('click', function() {
+//             modal.classList.remove('hide');
+//             modal.classList.add('show');
+//         });
+//     });
 
-    closeModalButton.addEventListener('click', function() {
-        closeModal();
-    });
+//     closeModalButton.addEventListener('click', function() {
+//         closeModal();
+//     });
 
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
+//     modal.addEventListener('click', function(event) {
+//         if (event.target === modal) {
+//             closeModal();
+//         }
+//     });
 
-    // Ajouter un écouteur d'événement pour la touche Échap
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') { // Vérifie si la touche appuyée est Échap
-            closeModal();
-        }
-    });
+//     // Ajouter un écouteur d'événement pour la touche Échap
+//     document.addEventListener('keydown', function(event) {
+//         if (event.key === 'Escape') { // Vérifie si la touche appuyée est Échap
+//             closeModal();
+//         }
+//     });
 
-    // Fonction pour fermer la modal
-    function closeModal() {
-        modal.classList.remove('show');
-        modal.classList.add('hide');
+//     // Fonction pour fermer la modal
+//     function closeModal() {
+//         modal.classList.remove('show');
+//         modal.classList.add('hide');
         
         
-        setTimeout(function() {
-            modal.classList.remove('hide');
-        }, 300); // durée de l'animation de fin
-    }
-});
+//         setTimeout(function() {
+//             modal.classList.remove('hide');
+//         }, 300); // durée de l'animation de fin
+//     }
+// });
 
 //gestion de la modale de doom
 
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
     
-    const button = document.querySelector('.openModalDoom');
-    const modalFrame = document.querySelector('.modalFrame');
+//     const button = document.querySelector('.openModalDoom');
+//     const modalFrame = document.querySelector('.modalFrame');
 
-    // Code HTML à ajouter
-    const newContent = `
-        <div class="modal2">
-            <div class="modal2Wrapper">
-                <span class="close"></span>
-                <iframe src="https://audiard-jerome.github.io/doom/" ></iframe>
-            </div>
-        </div>
-        `;
+//     // Code HTML à ajouter
+//     const newContent = `
+//         <div class="modal2">
+//             <div class="modal2Wrapper">
+//                 <span class="close"></span>
+//                 <iframe src="https://audiard-jerome.github.io/doom/" ></iframe>
+//             </div>
+//         </div>
+//         `;
 
-    // Ajoute un écouteur d'événements pour le clic sur le bouton
-    button.addEventListener('click', function() {
-        // Ajoute le nouveau contenu à la fin de modalFrame
-        modalFrame.insertAdjacentHTML('beforeend', newContent);
+//     // Ajoute un écouteur d'événements pour le clic sur le bouton
+//     button.addEventListener('click', function() {
+//         // Ajoute le nouveau contenu à la fin de modalFrame
+//         modalFrame.insertAdjacentHTML('beforeend', newContent);
 
-        // Sélectionne l'élément close après l'ajout du contenu
-        const closeButton = modalFrame.querySelector('.modal2 .close');
+//         // Sélectionne l'élément close après l'ajout du contenu
+//         const closeButton = modalFrame.querySelector('.modal2 .close');
 
-        // Ajoute un écouteur d'événements pour le clic sur le bouton de fermeture
-        closeButton.addEventListener('click', function() {
-            // Supprime la modale
-            const modal = modalFrame.querySelector('.modal2');
-            if (modal) {
-                modal.remove();
-            }
-        });
-    });
-});
+//         // Ajoute un écouteur d'événements pour le clic sur le bouton de fermeture
+//         closeButton.addEventListener('click', function() {
+//             // Supprime la modale
+//             const modal = modalFrame.querySelector('.modal2');
+//             if (modal) {
+//                 modal.remove();
+//             }
+//         });
+//     });
+// });
 
 
