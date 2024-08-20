@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8); 
-    z-index: 2;
+    z-index: 100000;
 }
 
 .modalWrapper {
@@ -26,6 +26,13 @@
         height: 100vh;
         animation: unset;
         box-sizing: border-box;
+        h2{
+            padding-top: 32px;
+        }
+        .close{
+            top: 16px;
+            right: 16px;
+        }
     }
 }
 
