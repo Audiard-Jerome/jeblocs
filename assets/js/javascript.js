@@ -48,10 +48,11 @@ function handleKeyPress(event) {
 
 document.addEventListener('keydown', handleKeyPress);
 
-//gestion de la modale
+//gestion de la modale de contact (+ Doom)
+
 document.addEventListener("DOMContentLoaded", function() {
     const openModalButtons = document.querySelectorAll('.openModal');
-    const modal = document.querySelector('.modal');
+    const modal = document.querySelector('.modal1');
     const closeModalButton = modal.querySelector('.close');
 
     openModalButtons.forEach(function(button) {
@@ -83,9 +84,47 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.classList.remove('show');
         modal.classList.add('hide');
         
-        // Optionally, use setTimeout to remove modal after animation finishes
+        
         setTimeout(function() {
             modal.classList.remove('hide');
-        }, 300); // Match the duration of fadeOut animation
+        }, 300); // durée de l'animation de fin
     }
 });
+
+//gestion de la modale de doom
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const button = document.querySelector('.openModalDoom');
+    const modalFrame = document.querySelector('.modalFrame');
+
+    // Code HTML à ajouter
+    const newContent = `
+        <div class="modal2">
+            <div class="modal2Wrapper">
+                <span class="close"></span>
+                <iframe src="https://audiard-jerome.github.io/doom/" ></iframe>
+            </div>
+        </div>
+        `;
+
+    // Ajoute un écouteur d'événements pour le clic sur le bouton
+    button.addEventListener('click', function() {
+        // Ajoute le nouveau contenu à la fin de modalFrame
+        modalFrame.insertAdjacentHTML('beforeend', newContent);
+
+        // Sélectionne l'élément close après l'ajout du contenu
+        const closeButton = modalFrame.querySelector('.modal2 .close');
+
+        // Ajoute un écouteur d'événements pour le clic sur le bouton de fermeture
+        closeButton.addEventListener('click', function() {
+            // Supprime la modale
+            const modal = modalFrame.querySelector('.modal2');
+            if (modal) {
+                modal.remove();
+            }
+        });
+    });
+});
+
+
