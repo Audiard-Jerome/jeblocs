@@ -130,10 +130,11 @@ $scrollTime: 60s;
 
 .backgroudNoise {
   background-image: url('../images/noise.svg');
-}
+  }
 
 .backgroundGrid {
   background-image: url('../images/grid.svg');
+  background-size: 100% auto;
 }
 
 .backgroundHeader {

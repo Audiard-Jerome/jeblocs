@@ -1,83 +1,102 @@
-//modal
-
-@media (max-width: 768px) {
-    .formContainer{
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-    }
-}
-
-.modal1 {
+// Modal
+.modalContact {
     display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
     left: 0;
     width: 100%;
-    height: 90%;
-    background: rgba(0, 0, 0, 0.8); 
+    height: 100%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(5px);
     z-index: 100000;
-}
 
-.modalWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--wp--preset--color--custom-violet);
-    height: auto;
-    width: 600px;
-    border: 5px solid #000;
-    border-radius: 1em;
-    padding: 0 1em;
-    gap: 0;
-    @media (max-width: 768px) {
-        width: 100%;
-        height: 100%;
-        animation: unset;
+    &.show {
+        display: flex;
+        animation: fadeIn 0.3s both;
+
+        .modalContactForm {
+            animation: slideFromTop 0.5s both 0.1s;
+        }
+    }
+
+    &.hide {
+        display: flex;
+        animation: fadeOut 0.3s both;
+
+        .modalContactForm {
+            animation: slideToBottom 0.3s both;
+        }
+    }
+
+    .wpcf7 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+        gap: 0;
+        width: 90%;
+    }
+
+    .modalContactForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--wp--preset--color--custom-violet);
+        border: 5px solid #000;
+        border-radius: 1em;
+        padding: 1em;
         box-sizing: border-box;
-        padding: 0 1em;
-        p{
-            padding: 0;
-            margin: 5px;
+        max-height: 90vh;
+        width: 90%;
+        max-width: 600px;
+        overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+        .modalContactForm {
+            padding: 1em;
+            width: 95vw;
+            height: auto;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-sizing: border-box;
         }
-        h2{
-            padding-top: 32px;
-        }
-        .close{
+
+        .close {
             top: 16px;
             right: 16px;
         }
-    }
-}
-
-.modal1.show{
-    display: flex;
-    animation: fadeIn 0.3s both;
-    .modalWrapper{
-        animation: slideFromTop 0.5s both 0.1s;
-    }
-}
-
-.modal1.hide{
-    display: flex;
-    animation: fadeOut 0.3s both;
-    .modalWrapper{
-        animation: slideToBottom 0.3s both;
+        h2{
+            font-size: 21px;
+        }
+        p{
+            font-size: 14px;
+        }
     }
 }
 
 .wpcf7-form {
-
-    input:not(input[type=checkbox]),
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    h2{
+        margin: 5px;
+    }
+    p {
+        width: 100%;
+        
+    }
+    input,
     textarea {
         border-radius: 5px;
         border: 1px solid var(--wp--preset--color--custom-clair);
         height: 3rem;
         width: 100%;
         padding: 1rem;
+
         font-family: var(--wp--preset--font-family--ibm-plex-sans);
         font-size: var(--wp--preset--font-size--medium);
         box-sizing: border-box;
@@ -88,57 +107,35 @@
     }
 
     .wpcf7-submit {
+        display: flex;
         height: auto;
         width: auto;
-        background-color: var(--wp--preset--color--custom-violet);
-        color: white;
+        background-color: var(--wp--preset--color--custom-clair);
+        color: var(--wp--preset--color--custom-violet);
+        font-weight: 700;
         border-radius: 10px;
-    }
-
-    .wpcf7-list-item{
-        margin: 0;
-    }
-
-    .btn {
-        p {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            flex-direction: column;
-            flex-wrap: wrap;
-
-            input {
-                margin: 0;
-                padding: 0 1em;
-                width: auto;
-            }
-        }
+        align-self: center;
+        margin: auto;
     }
 
     .wpcf7-spinner {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 50%);
-        margin: 0;
-    }
 
-    h2 {
-        margin: 0;
-        color: var(--wp--preset--color--custom-violet);;
+        display: none !important;
+        visibility: hidden !important;
+
     }
 }
 
-// .close{
-//         position:absolute;
-//         height: 23px;
-//         width: 23px;
-//         top: 32px;
-//         right: 32px;
-//         cursor: pointer;
-//         z-index: 3;
-//         background-image: url(../images/iconCroix.svg);
-// }
+.close {
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    top: 32px;
+    right: 32px;
+    cursor: pointer;
+    z-index: 3;
+    background-image: url(../images/iconCroix.svg);
+}
 
 @keyframes fadeIn {
     from {
@@ -184,19 +181,20 @@
     }
 }
 
-//modale 2
+
+//modale 2 DOOM
 
 .modal2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute; 
-    top: 0; 
-    left: 0; 
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-    width: 100%; 
+    width: 100%;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.8); 
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .modal2Wrapper {
@@ -205,7 +203,7 @@
 
 }
 
-iframe{
+iframe {
     height: 100%;
     width: 100%;
 }
@@ -213,4 +211,3 @@ iframe{
 .modalFrame {
     position: relative;
 }
-
